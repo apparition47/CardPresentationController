@@ -16,8 +16,4 @@ class ModalViewController: UIViewController, CardModalPresentable {
         
         dismiss(animated: true, completion: nil)
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return isHalfModalMaximized ? .default : .lightContent
-    }
 }

@@ -148,7 +148,7 @@ class CardPresentationController: UIPresentationController {
 
 protocol CardModalPresentable { }
 
-extension CardModalPresentable where Self: UIViewController {
+extension CardModalPresentable where Self: UINavigationController {
     var isHalfModalMaximized: Bool {
         if let presentationController = presentationController as? CardPresentationController {
             return presentationController.isMaximized
