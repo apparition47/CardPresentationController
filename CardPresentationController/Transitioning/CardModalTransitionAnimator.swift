@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HalfModalTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class CardModalTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var type: HalfModalTransitionAnimatorType
     
     init(type: HalfModalTransitionAnimatorType) {

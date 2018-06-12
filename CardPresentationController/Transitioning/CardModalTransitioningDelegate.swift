@@ -1,6 +1,6 @@
 //
-//  HalfModalTransitioningDelegate.swift
-//  HalfModalPresentationController
+//  CardModalTransitioningDelegate.swift
+//  CardModalPresentationController
 //
 //  Created by Martin Normark on 17/01/16.
 //  Copyright © 2016 martinnormark. All rights reserved.
@@ -11,14 +11,14 @@ import UIKit
 class CardModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     var viewController: UIViewController
     var presentingViewController: UIViewController
-    var interactionController: HalfModalInteractiveTransition
+    var interactionController: CardModalInteractiveTransition
     
     var interactiveDismiss = true
     
     init(viewController: UIViewController, presentingViewController: UIViewController) {
         self.viewController = viewController
         self.presentingViewController = presentingViewController
-        self.interactionController = HalfModalInteractiveTransition(
+        self.interactionController = CardModalInteractiveTransition(
             viewController: self.viewController,
             withView: self.presentingViewController.view,
             presentingViewController: self.presentingViewController
@@ -28,7 +28,7 @@ class CardModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDel
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HalfModalTransitionAnimator(type: .dismiss)
+        return CardModalTransitionAnimator(type: .dismiss)
     }
     
     func presentationController(forPresented presented: UIViewController,

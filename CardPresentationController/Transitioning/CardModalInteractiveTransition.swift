@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HalfModalInteractiveTransition: UIPercentDrivenInteractiveTransition {
+class CardModalInteractiveTransition: UIPercentDrivenInteractiveTransition {
     var viewController: UIViewController
     var presentingViewController: UIViewController?
     var panGestureRecognizer: UIPanGestureRecognizer

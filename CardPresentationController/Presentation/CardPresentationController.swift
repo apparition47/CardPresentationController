@@ -29,7 +29,7 @@ class CardPresentationController: UIPresentationController {
         presentedViewController.view.layer.masksToBounds = true
         
         let panIndicatorBar = UIButton()
-        panIndicatorBar.backgroundColor = .white
+        panIndicatorBar.backgroundColor = .black
         panIndicatorBar.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         panIndicatorBar.layer.cornerRadius = 3
         presentedViewController.view.addSubview(panIndicatorBar)
@@ -56,7 +56,7 @@ class CardPresentationController: UIPresentationController {
             let velocity = pan.velocity(in: pan.view?.superview)
             switch state {
             case .normal:
-                presentedView!.frame.origin.y = endPoint.y + containerView!.frame.height * 0.08
+                presentedView!.frame.origin.y = endPoint.y + containerView!.frame.height * 0.06
             case .adjustedOnce:
                 if #available(iOS 11.0, *) {
                     if endPoint.y <= (UIApplication.shared.keyWindow?.safeAreaInsets.top)! {
@@ -97,10 +97,10 @@ class CardPresentationController: UIPresentationController {
                 options: .curveEaseInOut,
                 animations: {
                     let containerFrame = containerView.frame
-                    let halfFrame = CGRect(origin: CGPoint(x: 0, y: containerFrame.height * 0.08),
+                    let halfFrame = CGRect(origin: CGPoint(x: 0, y: containerFrame.height * 0.06),
                                            size: CGSize(
                                             width: containerFrame.width,
-                                            height: containerFrame.height * 0.92))
+                                            height: containerFrame.height * 0.94))
                     presentedView.frame = halfFrame
             }, completion: { [unowned self] _ in
                 self.state = state
@@ -109,8 +109,8 @@ class CardPresentationController: UIPresentationController {
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        return CGRect(x: 0, y: containerView!.bounds.height * 0.08,
-                      width: containerView!.bounds.width, height: containerView!.bounds.height * 0.92
+        return CGRect(x: 0, y: containerView!.bounds.height * 0.06,
+                      width: containerView!.bounds.width, height: containerView!.bounds.height * 0.94
         )
     }
     
