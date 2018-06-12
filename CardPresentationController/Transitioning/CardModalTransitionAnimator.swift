@@ -1,6 +1,6 @@
 //
-//  HalfModalTransitionAnimator.swift
-//  HalfModalPresentationController
+//  CardModalTransitionAnimator.swift
+//  CardModalPresentationController
 //
 //  Created by Martin Normark on 29/01/16.
 //  Copyright © 2016 martinnormark. All rights reserved.
@@ -9,9 +9,9 @@
 import UIKit
 
 class CardModalTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    var type: HalfModalTransitionAnimatorType
+    var type: CardModalTransitionAnimatorType
     
-    init(type: HalfModalTransitionAnimatorType) {
+    init(type: CardModalTransitionAnimatorType) {
         self.type = type
     }
     
@@ -31,7 +31,7 @@ class CardModalTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioni
     }
 }
 
-internal enum HalfModalTransitionAnimatorType {
+internal enum CardModalTransitionAnimatorType {
     case present
     case dismiss
 }

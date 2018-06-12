@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ModalScaleState {
+enum CardModalScaleState {
     case adjustedOnce
     case normal
 }
@@ -17,7 +17,7 @@ class CardPresentationController: UIPresentationController {
     var isMaximized: Bool = false
     var panGestureRecognizer: UIPanGestureRecognizer
     var direction: CGFloat = 0
-    var state: ModalScaleState = .normal
+    var state: CardModalScaleState = .normal
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         self.panGestureRecognizer = UIPanGestureRecognizer()
@@ -29,8 +29,7 @@ class CardPresentationController: UIPresentationController {
         presentedViewController.view.layer.masksToBounds = true
         
         let panIndicatorBar = UIButton()
-        panIndicatorBar.backgroundColor = .black
-        panIndicatorBar.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        panIndicatorBar.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor
         panIndicatorBar.layer.cornerRadius = 3
         presentedViewController.view.addSubview(panIndicatorBar)
         panIndicatorBar.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +86,7 @@ class CardPresentationController: UIPresentationController {
         }
     }
     
-    func changeScale(to state: ModalScaleState) {
+    func changeScale(to state: CardModalScaleState) {
         self.presentingViewController.view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
         if let presentedView = presentedView, let containerView = self.containerView {
