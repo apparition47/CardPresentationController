@@ -27,6 +27,7 @@ class CardModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDel
         super.init()
     }
     
+    // MARK: - UIViewControllerTransitioningDelegate
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CardModalTransitionAnimator(type: .dismiss)
     }
@@ -42,7 +43,6 @@ class CardModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDel
         ) -> UIViewControllerInteractiveTransitioning? {
         return interactiveDismiss ? interactionController : nil
     }
-    
 }
 
 extension UIViewController { }
