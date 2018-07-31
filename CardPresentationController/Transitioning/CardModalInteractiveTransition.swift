@@ -23,7 +23,6 @@ class CardModalInteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
         super.startInteractiveTransition(transitionContext)
-        finish()
     }
     
     override var completionSpeed: CGFloat {

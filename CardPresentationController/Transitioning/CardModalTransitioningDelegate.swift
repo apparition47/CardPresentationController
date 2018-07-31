@@ -13,7 +13,7 @@ class CardModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDel
     var presentingViewController: UIViewController
     var interactionController: CardModalInteractiveTransition
     
-    var interactiveDismiss = true
+    var interactiveDismiss = false
     
     init(viewController: UIViewController, presentingViewController: UIViewController) {
         self.viewController = viewController
